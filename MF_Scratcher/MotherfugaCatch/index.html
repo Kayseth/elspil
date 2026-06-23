@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <title>Motherfuga Catch</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="game-container"></div>
+  <div id="error-overlay" hidden>
+    <h2>Spillet kunne ikke starte</h2>
+    <p id="error-message"></p>
+  </div>
+
+  <script src="lib/phaser.min.js"></script>
+
+  <script>
+    function showError(msg) {
+      var overlay = document.getElementById('error-overlay');
+      var message = document.getElementById('error-message');
+      if (overlay && message) {
+        message.textContent = msg;
+        overlay.hidden = false;
+      }
+      console.error('[Motherfuga Catch]', msg);
+    }
+  </script>
+
+  <script src="js/utils/EmbeddedAssets.js"></script>
+  <script src="js/utils/AudioSynth.js"></script>
+  <script src="js/utils/GameConfig.js"></script>
+  <script src="js/scenes/PreloadScene.js"></script>
+  <script src="js/scenes/MenuScene.js"></script>
+  <script src="js/scenes/GameScene.js"></script>
+  <script src="js/scenes/GameOverScene.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
